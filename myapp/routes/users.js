@@ -8,13 +8,7 @@ const AuthController = require("./../controllers/AuthController");
 
 const uri = 'mongodb://localhost:27017/Demo_CRUD_Project'
 
-//login
-router.post("/login", (req, res, next) => {
-  AuthController.login(req, res)
-});
-
-router.use(AuthMiddleWare.isAuth);//kiểm tra auth. Nếu không có token thì không cho thực hiện các thao tác CRUD
-
+// router.use(AuthMiddleWare.isAuth);//kiểm tra auth. Nếu không có token thì không cho thực hiện các thao tác CRUD
 
 //create user
 router.post('/', (req, res, next) => {
